@@ -1,0 +1,70 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.barra{
+    // background-color: v.$azul;
+    padding: 1rem 2rem ;
+    margin: 1rem -2rem;
+    display: flex;
+    justify-content: space-around;
+     align-items: center;
+    
+
+    p{
+        margin: 0 ;
+        text-align: right;
+    }
+
+    
+    .logout{
+        color: v.$rojo;
+        font-weight: v.$bold;
+        font-size: 2rem;
+
+        &:hover{
+            color: darken(v.$rojo, 10%);
+        }
+    }
+
+    
+}
+
+.contenedor-app{
+    @include m.tablet{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .imagen{
+        height: 25rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet{
+            height: auto;
+        }
+    }
+
+    .app{
+       width: 95%;
+       padding: 1rem 0 3rem 0;
+       margin: 0 auto; 
+       @include m.tablet{
+        overflow: scroll;
+       }
+    }
+
+}
+
+.barra-servicios{
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boton{
+        margin: 2rem 0;
+    }
+}
